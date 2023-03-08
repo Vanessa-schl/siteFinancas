@@ -1,0 +1,257 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  outline: none;
+}
+
+header {
+  background-color: rgb(233, 154, 191);
+}
+.header1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titulo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: rgb(224, 48, 92);
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.moedinhas {
+  width: 3.5rem;
+  display: flex;
+  flex-direction: row;
+  margin-right: 1.5rem;
+  align-items: center;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* ===================== MAIN ==================== */
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.card1 {
+  border-radius: 5px;
+  box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
+  padding: 30px;
+  margin: 20px;
+  width: 400px;
+  transition: all 0.3s ease-out;
+  border-left: 0.3rem solid rgb(221, 131, 176);
+}
+
+.card1-1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.card2{
+    border-radius: 5px;
+    box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
+    padding: 30px;
+    margin: 20px;
+    width: 400px;
+    transition: all 0.3s ease-out;
+    border-left: 0.3rem solid rgb(221, 131, 176);
+}
+
+.card2-2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.card3{
+    border-radius: 5px;
+    box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
+    padding: 30px;
+    margin: 20px;
+    width: 400px;
+    transition: all 0.3s ease-out;
+    border-left: 0.3rem solid rgb(221, 131, 176);
+}
+
+.card3-3{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+}
+
+.r{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.setaCima{
+    width: 3rem;
+}
+
+.setaBaixo{
+    width: 3rem;
+}
+
+.cifrao{
+    width: 3.3rem;
+}
+
+.novaTransacao{
+    display: flex;
+    justify-content: center;
+    margin-left: 2.9rem;
+    margin-top: 1.5rem;
+    color: rgb(216, 82, 127);
+}
+
+
+.novoItem{
+    display: flex;
+    gap: 2rem;
+    margin-top: 3rem;
+    align-items: end;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: rgb(228, 63, 90)
+}
+
+#transaction-form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    margin-left: 20rem;
+    margin-top: 3rem;
+}
+
+#transaction-history{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    width: 50rem;
+    margin-left: 17rem;
+
+}
+
+#transaction-submit{
+    background-color: pink;
+    color: white;
+    border: none;
+    padding: 0 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 34px;
+    align-items: center;
+    border: 1px solid rgb(235, 76, 103);
+}
+
+.delete-btn{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: pink;
+    color: white;
+    border: none;
+    padding: 0 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 34px;
+    align-items: center;
+    border: 1px solid rgb(235, 76, 103);
+}
+
+.botaozinho{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.classTD{
+    width: 0.5rem;
+    margin-left: 2rem;
+}
+
+
+
+input, select{
+    padding: 5px;
+    background-color: pink;
+    color: white;
+    outline: none;
+    border: 1px solid rgb(235, 76, 103);
+}
+
+tr{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: row;
+    gap: 15rem;
+    margin-top: 3rem;
+}
+
+th{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-right: 1rem;
+}
+
+
+i{
+    font-size: 25px;
+}
+
+.bxs-chevron-up-circle{
+    color: rgb(243, 149, 181);
+}
+
+.bxs-chevron-down-circle{
+    color: rgb(223, 58, 99);
+}
+
+.columnAction{
+    width: 40px;
+    text-align: center;
+}
+
+.columnAction>button{
+    background-color: transparent;
+    border: none;
+}
+
+.columnAmount{
+    width: 30%;
+}
+
+.columnType{
+    width: 80%;
+    text-align: center;
+}

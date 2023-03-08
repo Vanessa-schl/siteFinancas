@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Controle de finanças</title>
+    <link rel="stylesheet" href="./financas.css" />
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Criar um site pessoal de financas onde será possível informar um valor e se é receita ou despesa e apareca 
+        um histórico de cada transação que foi feita, e o dado precisa persistir mesmo que vcs fechem e abram a
+         pagina novamente (LocalStorage), site responsivo, -->
+
+    <header>
+      <div class="header1">
+        <img class="moedinhas" src="./moedinhas.png" alt="" />
+        <div class="titulo">Finanças.com</div>
+      </div>
+    </header>
+    <main>
+      <div class="row">
+        <div class="card1">
+          <div class="card1-1">
+            <p class="entrada">Entradas</p>
+            <img class="setaCima" src="./seta-para-cima (1).png" alt="" />
+          </div>
+          <p class="entrada">Entradas</p>
+        </div>
+
+        <div class="card2">
+          <div class="card2-2">
+            <p class="saida">Saídas</p>
+            <img class="setaBaixo" src="./seta-para-baixo (1).png" alt="" />
+          </div>
+          <p class="saida">Saídas</p>
+        </div>
+
+        <div class="card3">
+          <div class="card3-3">
+            <p class="total">Total</p>
+            <img class="cifrao" src="./cifrao.png" alt="" />
+          </div>
+          <p class="total">Total</p>
+        </div>
+      </div>
+
+      <div class="novaTransacao">
+        <p> Nova Transação: </p>
+      </div>
+
+      <form id="transaction-form">
+   
+        <!-- <div class="divDesc">
+            <label for="desc">Descrição</label>
+            <input type="text" id="desc"/>
+        </div> -->
+            <label for="amount-input">Valor</label>
+            <input type="number" id="amount-input" name="amount" required />
+            <label for="type-select">Tipo de transação: </label>
+            <select id="type-select" name="type" required>
+                <option value="Entrada">Entrada</option> //RECEITA
+                <option value="Saída">Saída</option> //DESEPSA
+            </select>
+                <button type="submit" id="transaction-submit">Incluir</button>
+        </form>  
+
+            <table id="transaction-history">
+              <thead>
+                    <tr>
+                            <!-- <li>Descrição </li> -->
+                            <th>Valor </th>
+                            <th>Tipo</th>
+                    </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+
+    </main>
+
+    <script src="./financas.js" />
+  </body>
+</html>
