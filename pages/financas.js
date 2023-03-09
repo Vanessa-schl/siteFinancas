@@ -61,9 +61,9 @@ const amountInput = document.getElementById("amount-input");
 const typeSelect = document.getElementById("type-select");
 const transactionForm = document.getElementById("transaction-form");
 const transactionTableBody = document.querySelector("#transaction-history tbody");
-const totalCard = document.querySelector(".card3 p.total");
-const incomeCard = document.querySelector(".card1 p.entrada");
-const expenseCard = document.querySelector(".card2 p.saida");
+const totalCard = document.querySelector(".total");
+const incomeCard = document.querySelector(".entrada");
+const expenseCard = document.querySelector(".saida");
 
 // Função para salvar a transação no localStorage
 function saveTransactionToLocalStorage(transaction) {
@@ -110,9 +110,9 @@ function updateTotalCard() {
     }
   });
 
-  totalCard.textContent = `R$ ${total.toFixed(2)}`;
-  incomeCard.textContent = `R$ ${income.toFixed(2)}`;
-  expenseCard.textContent = `R$ ${expense.toFixed(2)}`;
+  totalCard.innerHTML = `R$ ${total.toFixed(2)}`;
+  incomeCard.innerHTML = `R$ ${income.toFixed(2)}`;
+  expenseCard.innerHTML = `R$ ${expense.toFixed(2)}`;
 }
 
 // Função para carregar as transações do localStorage
