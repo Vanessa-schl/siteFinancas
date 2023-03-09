@@ -55,49 +55,26 @@
 
 
 // Criação de variáveis globais
-// let transactionHistory = [];
-
-// const amountInput = document.getElementById("amount-input").value;
-// const typeSelect = document.getElementById("type-select").value;
-// const transactionForm = document.getElementById("transaction-form");
-// const transactionTableBody = document.querySelector("#transaction-history");
-// const totalCard = document.querySelector(".total");
-// const incomeCard = document.querySelector(".entrada");
-// const expenseCard = document.querySelector(".saida");
-
 let transactionHistory = [];
-let amountInput;
-let typeSelect;
-let transactionForm;
-let transactionTableBody;
-let totalCard;
-let incomeCard;
-let expenseCard;
-let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
 
-
-window.onload = function() {
-  amountInput = document.getElementById("amount-input").value;
-  typeSelect = document.getElementById("type-select").value;
-  transactionForm = document.getElementById("transaction-form");
-  transactionTableBody = document.querySelector("#transaction-history");
-  totalCard = document.querySelector(".total");
-  incomeCard = document.querySelector(".entrada");
-  expenseCard = document.querySelector(".saida");
-
-  loadTransactions();
-};
-
-
+const amountInput = document.getElementById("amount-input");
+const typeSelect = document.getElementById("type-select");
+const transactionForm = document.getElementById("transaction-form");
+const transactionTableBody = document.querySelector("#transaction-history tbody");
+const totalCard = document.querySelector(".card3 p.total");
+const incomeCard = document.querySelector(".card1 p.entrada");
+const expenseCard = document.querySelector(".card2 p.saida");
 
 // Função para salvar a transação no localStorage
 function saveTransactionToLocalStorage(transaction) {
+  let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
   transactions.push(transaction);
   localStorage.setItem("transactions", JSON.stringify(transactions));
 }
 
 // Função para excluir a transação do localStorage
 function deleteTransactionFromLocalStorage(index) {
+  let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
   transactions.splice(index, 1);
   localStorage.setItem("transactions", JSON.stringify(transactions));
 }
@@ -113,6 +90,7 @@ function updateTransactionTable(transaction) {
         <td><button class="delete-btn">Excluir</button></td>
         </div>
     `;
+
   transactionTableBody.appendChild(tr);
 }
 
@@ -123,7 +101,7 @@ function updateTotalCard() {
   let expense = 0;
 
   transactionHistory.forEach((transaction) => {
-    if (transaction.type == "Entrada") {
+    if (transaction.type === "Entrada") {
       income += transaction.amount;
       total += transaction.amount;
     } else {
@@ -132,13 +110,14 @@ function updateTotalCard() {
     }
   });
 
-  totalCard.innerHTML = `R$ ${total.toFixed(2)}`;
-  incomeCard.innerHTML = `R$ ${income.toFixed(2)}`;
-  expenseCard.innerHTML = `R$ ${expense.toFixed(2)}`;
+  totalCard.textContent = `R$ ${total.toFixed(2)}`;
+  incomeCard.textContent = `R$ ${income.toFixed(2)}`;
+  expenseCard.textContent = `R$ ${expense.toFixed(2)}`;
 }
 
 // Função para carregar as transações do localStorage
 function loadTransactions() {
+  let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
 
   transactions.forEach((transaction) => {
     transactionHistory.push(transaction);
