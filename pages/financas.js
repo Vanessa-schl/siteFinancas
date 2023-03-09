@@ -60,7 +60,7 @@ let transactionHistory = [];
 const amountInput = document.getElementById("amount-input");
 const typeSelect = document.getElementById("type-select");
 const transactionForm = document.getElementById("transaction-form");
-const transactionTableBody = document.querySelector("#transaction-history tbody");
+const transactionTableBody = document.querySelector("#transaction-history");
 const totalCard = document.querySelector(".total");
 const incomeCard = document.querySelector(".entrada");
 const expenseCard = document.querySelector(".saida");
@@ -90,6 +90,9 @@ function updateTransactionTable(transaction) {
         <td><button class="delete-btn">Excluir</button></td>
         </div>
     `;
+    console.log(transaction.amount);
+    console.log(tr);
+    console.log(transaction.type);
 
   transactionTableBody.appendChild(tr);
 }
@@ -113,6 +116,10 @@ function updateTotalCard() {
   totalCard.innerHTML = `R$ ${total.toFixed(2)}`;
   incomeCard.innerHTML = `R$ ${income.toFixed(2)}`;
   expenseCard.innerHTML = `R$ ${expense.toFixed(2)}`;
+
+  console.log(total);
+  console.log(income);
+  console.log(expense);
 }
 
 // Função para carregar as transações do localStorage
