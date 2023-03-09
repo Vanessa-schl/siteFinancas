@@ -55,15 +55,38 @@
 
 
 // Criação de variáveis globais
-let transactionHistory = [];
+// let transactionHistory = [];
 
-const amountInput = document.getElementById("amount-input");
-const typeSelect = document.getElementById("type-select");
-const transactionForm = document.getElementById("transaction-form");
-const transactionTableBody = document.querySelector("#transaction-history");
-const totalCard = document.querySelector(".total");
-const incomeCard = document.querySelector(".entrada");
-const expenseCard = document.querySelector(".saida");
+// const amountInput = document.getElementById("amount-input").value;
+// const typeSelect = document.getElementById("type-select").value;
+// const transactionForm = document.getElementById("transaction-form");
+// const transactionTableBody = document.querySelector("#transaction-history");
+// const totalCard = document.querySelector(".total");
+// const incomeCard = document.querySelector(".entrada");
+// const expenseCard = document.querySelector(".saida");
+
+let transactionHistory = [];
+let amountInput;
+let typeSelect;
+let transactionForm;
+let transactionTableBody;
+let totalCard;
+let incomeCard;
+let expenseCard;
+
+window.onload = function() {
+  amountInput = document.getElementById("amount-input");
+  typeSelect = document.getElementById("type-select");
+  transactionForm = document.getElementById("transaction-form");
+  transactionTableBody = document.querySelector("#transaction-history");
+  totalCard = document.querySelector(".total");
+  incomeCard = document.querySelector(".entrada");
+  expenseCard = document.querySelector(".saida");
+
+  loadTransactions();
+};
+
+
 
 // Função para salvar a transação no localStorage
 function saveTransactionToLocalStorage(transaction) {
