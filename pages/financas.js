@@ -73,10 +73,12 @@ let transactionTableBody;
 let totalCard;
 let incomeCard;
 let expenseCard;
+let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
+
 
 window.onload = function() {
-  amountInput = document.getElementById("amount-input");
-  typeSelect = document.getElementById("type-select");
+  amountInput = document.getElementById("amount-input").value;
+  typeSelect = document.getElementById("type-select").value;
   transactionForm = document.getElementById("transaction-form");
   transactionTableBody = document.querySelector("#transaction-history");
   totalCard = document.querySelector(".total");
@@ -90,14 +92,12 @@ window.onload = function() {
 
 // Função para salvar a transação no localStorage
 function saveTransactionToLocalStorage(transaction) {
-  let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
   transactions.push(transaction);
   localStorage.setItem("transactions", JSON.stringify(transactions));
 }
 
 // Função para excluir a transação do localStorage
 function deleteTransactionFromLocalStorage(index) {
-  let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
   transactions.splice(index, 1);
   localStorage.setItem("transactions", JSON.stringify(transactions));
 }
@@ -123,7 +123,7 @@ function updateTotalCard() {
   let expense = 0;
 
   transactionHistory.forEach((transaction) => {
-    if (transaction.type === "Entrada") {
+    if (transaction.type == "Entrada") {
       income += transaction.amount;
       total += transaction.amount;
     } else {
@@ -139,7 +139,6 @@ function updateTotalCard() {
 
 // Função para carregar as transações do localStorage
 function loadTransactions() {
-  let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
 
   transactions.forEach((transaction) => {
     transactionHistory.push(transaction);
